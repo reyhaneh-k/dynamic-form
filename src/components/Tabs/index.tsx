@@ -1,14 +1,20 @@
-import Form from "../Form";
-import { useGetFormData } from "../Form/services";
+import { FC, useState } from "react";
+import { TabsProps } from "./types";
 
-const Tabs = () => {
-  const { data: forms } = useGetFormData();
-
+const Tabs: FC<TabsProps> = ({ tabs }) => {
+  const [setslectedTab, setSetslectedTab] = useState(0);
   return (
     <div>
-      {forms?.map((form) => (
-        <Form key={form.formId} {...form} />
+      {tabs.map((tab, index) => (
+        <span
+          onClick={() => setSetslectedTab(index)}
+          key={index}
+          className="tab-title"
+        >
+          {tab.title}
+        </span>
       ))}
+      <div>{tabs[setslectedTab]?.children}</div>
     </div>
   );
 };

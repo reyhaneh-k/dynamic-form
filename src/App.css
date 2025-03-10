@@ -18,3 +18,10 @@ input,
 label {
   margin: 0.4rem 0;
 }
+.tab-title {
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: cornflowerblue;
+}

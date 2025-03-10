@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
-import Tabs from "./components/Tabs";
+import FormTabs from "./components/FormTabs";
 
 function App() {
   const queryClient = new QueryClient({
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Tabs />
+      <FormTabs />
     </QueryClientProvider>
   );
 }

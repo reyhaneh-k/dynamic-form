@@ -14,7 +14,11 @@ const fieldTypeEnum = z.enum([
 //visibilit schema
 const visibilitySchema = z.object({
   dependsOn: z.string(),
-  condition: z.union([z.literal("equals"), z.string()]),
+  condition: z.union([
+    z.literal("equals"),
+    z.literal("greaterThan"),
+    z.literal("lowerThan"),
+  ]),
   value: z.string(),
 });
 
